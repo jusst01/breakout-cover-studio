@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BREAKOUT | Pop-out Hero Cover Studio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="top-nav">
+        <div class="nav-left">
+            <span class="wordmark">BREAKOUT</span>
+            <span class="layout-label">Hero Tri-Panel</span>
+        </div>
+        <div class="nav-right">
+            <button id="export-btn" class="primary-btn">Export PNG</button>
+        </div>
+    </header>
+
+    <div class="app-layout">
+        <aside class="sidebar-controls">
+            <div class="control-section">
+                <h3>Photos &amp; Samples</h3>
+                <div class="panel-upload-group">
+                    <label>Panel 1 Photo</label>
+                    <div class="input-row">
+                        <input type="file" class="photo-input" data-panel="0" accept="image/*">
+                        <button class="sample-btn" data-sample="hero">Sample Hero</button>
+                    </div>
+                </div>
+                <div class="panel-upload-group">
+                    <label>Panel 2 Photo</label>
+                    <div class="input-row">
+                        <input type="file" class="photo-input" data-panel="1" accept="image/*">
+                        <button class="sample-btn" data-sample="man">Sample Man</button>
+                    </div>
+                </div>
+                <div class="panel-upload-group">
+                    <label>Panel 3 Photo</label>
+                    <div class="input-row">
+                        <input type="file" class="photo-input" data-panel="2" accept="image/*">
+                        <button class="sample-btn" data-sample="car">Sample Car</button>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label for="fill-mode">Fill Mode</label>
+                    <select id="fill-mode">
+                        <option value="individual">Individual</option>
+                        <option value="spread">Spread</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="control-section">
+                <h3>Canvas &amp; Output</h3>
+                <div class="control-group">
+                    <label for="canvas-size">Canvas Size</label>
+                    <select id="canvas-size">
+                        <option value="1080x1080">1080x1080 (Square)</option>
+                        <option value="1080x1350">1080x1350 (Portrait)</option>
+                        <option value="1920x1080">1920x1080 (Landscape)</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="control-section">
+                <h3>Typography &amp; Overlay</h3>
+                <div class="control-group">
+                    <label for="title-input">Cover Title</label>
+                    <input type="text" id="title-input" value="BREAKOUT">
+                </div>
+                <div class="control-group">
+                    <label for="caption-input">Subtitle / Caption</label>
+                    <input type="text" id="caption-input" value="POP-OUT HERO COVER STUDIO">
+                </div>
+                <div class="control-row checkbox-row">
+                    <label for="popout-toggle">Pop-out Effect</label>
+                    <input type="checkbox" id="popout-toggle" checked="">
+                </div>
+                <div class="control-row checkbox-row">
+                    <label for="stickers-toggle">Stickers &amp; Stamps</label>
+                    <input type="checkbox" id="stickers-toggle" checked="">
+                </div>
+                <div class="control-group">
+                    <label for="grade-select">Color Grade</label>
+                    <select id="grade-select">
+                        <option value="neon-rain">Neon Rain</option>
+                        <option value="vice-dusk">Vice Dusk</option>
+                        <option value="acid-palm">Acid Palm</option>
+                        <option value="mono-heat">Mono Heat</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="control-section">
+                <h3>Panel Adjustments</h3>
+
+                <div class="panel-adjust-group">
+                    <span class="adjust-panel-title">Panel 1</span>
+                    <div class="control-group">
+                        <label>Focal X: <span class="val-display">0</span></label>
+                        <input type="range" class="focal-x" data-panel="0" min="-1" max="1" step="0.05" value="0">
+                    </div>
+                    <div class="control-group">
+                        <label>Focal Y: <span class="val-display">0</span></label>
+                        <input type="range" class="focal-y" data-panel="0" min="-1" max="1" step="0.05" value="0">
+                    </div>
+                    <div class="control-group">
+                        <label>Zoom: <span class="val-display">1</span></label>
+                        <input type="range" class="zoom" data-panel="0" min="0.5" max="3" step="0.05" value="1">
+                    </div>
+                </div>
+
+                <div class="panel-adjust-group">
+                    <span class="adjust-panel-title">Panel 2</span>
+                    <div class="control-group">
+                        <label>Focal X: <span class="val-display">0</span></label>
+                        <input type="range" class="focal-x" data-panel="1" min="-1" max="1" step="0.05" value="0">
+                    </div>
+                    <div class="control-group">
+                        <label>Focal Y: <span class="val-display">0</span></label>
+                        <input type="range" class="focal-y" data-panel="1" min="-1" max="1" step="0.05" value="0">
+                    </div>
+                    <div class="control-group">
+                        <label>Zoom: <span class="val-display">1</span></label>
+                        <input type="range" class="zoom" data-panel="1" min="0.5" max="3" step="0.05" value="1">
+                    </div>
+                </div>
+
+                <div class="panel-adjust-group">
+                    <span class="adjust-panel-title">Panel 3</span>
+                    <div class="control-group">
+                        <label>Focal X: <span class="val-display">0</span></label>
+                        <input type="range" class="focal-x" data-panel="2" min="-1" max="1" step="0.05" value="0">
+                    </div>
+                    <div class="control-group">
+                        <label>Focal Y: <span class="val-display">0</span></label>
+                        <input type="range" class="focal-y" data-panel="2" min="-1" max="1" step="0.05" value="0">
+                    </div>
+                    <div class="control-group">
+                        <label>Zoom: <span class="val-display">1</span></label>
+                        <input type="range" class="zoom" data-panel="2" min="0.5" max="3" step="0.05" value="1">
+                    </div>
+                </div>
+
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <section class="canvas-workspace">
+                <div class="canvas-wrapper">
+                    <canvas id="cover-canvas" width="1080" height="1080"></canvas>
+                    <div class="canvas-overlay-hints"></div>
+                </div>
+            </section>
+
+            <div class="filmstrip-tray">
+                <div class="thumbnail-slot" data-slot="0"></div>
+                <div class="thumbnail-slot" data-slot="1"></div>
+                <div class="thumbnail-slot" data-slot="2"></div>
+            </div>
+        </main>
+    </div>
+
+    <script type="module" src="js/main.js"></script>
+
+
+</body></html>
